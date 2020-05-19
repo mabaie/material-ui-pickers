@@ -12,10 +12,18 @@ export interface DatePickerInlineProps
     BaseDatePickerProps,
     ExtendWrapper<OuterInlineWrapperProps> {
   onlyCalendar?: boolean;
+  clearable?: boolean;
+  clearLabel?: React.ReactNode;
+  todayLabel?: React.ReactNode;
+  showTodayButton?: boolean;
 }
 
 export const DatePickerInline: React.SFC<DatePickerInlineProps> = props => {
   const {
+    clearable,
+    clearLabel,
+    todayLabel,
+    showTodayButton,
     allowKeyboardControl,
     animateYearScrolling,
     disableFuture,
@@ -51,9 +59,14 @@ export const DatePickerInline: React.SFC<DatePickerInlineProps> = props => {
         handleChange,
         handleClear,
         handleTextFieldChange,
+        handleSetTodayDate,
         handleAccept,
       }) => (
         <InlineWrapper
+          clearable={clearable}
+          clearLabel={clearLabel}
+          showTodayButton={showTodayButton}
+          todayLabel={todayLabel}
           disableFuture={disableFuture}
           disablePast={disablePast}
           format={format || utils.dateFormat}
@@ -66,6 +79,7 @@ export const DatePickerInline: React.SFC<DatePickerInlineProps> = props => {
           isAccepted={isAccepted}
           handleAccept={handleAccept}
           onClear={handleClear}
+          onSetToday={handleSetTodayDate}
           {...other}
         >
           <ComponentToShow
@@ -80,11 +94,42 @@ export const DatePickerInline: React.SFC<DatePickerInlineProps> = props => {
             maxDate={maxDate}
             minDate={minDate}
             onChange={handleChange}
+            onClear={handleClear}
             openToYearSelection={openToYearSelection}
             renderDay={renderDay}
             rightArrowIcon={rightArrowIcon}
             shouldDisableDate={shouldDisableDate}
           />
+          {/* <DialogActions
+      classes={{
+        root: clearable || showTodayButton ? classes.dialogActions : undefined,
+        action: clsx(classes.dialogAction, {
+          [classes.clearableDialogAction]: clearable,
+          [classes.todayDialogAction]: !clearable && showTodayButton,
+        }),
+      }}
+    > */}
+          {/* {clearable && (
+        <Button color="primary" onClick={handleClear}>
+          {clearLabel}
+        </Button>
+      )} */}
+
+          {/* {!clearable &&
+        showTodayButton && (
+          <Button color="primary" onClick={onSetToday}>
+            {todayLabel}
+          </Button>
+        )}
+
+      <Button color="primary" onClick={onDismiss}>
+        {cancelLabel}
+      </Button>
+
+      <Button color="primary" onClick={onAccept}>
+        {okLabel}
+      </Button> */}
+          {/* </DialogActions> */}
         </InlineWrapper>
       )}
     </BasePicker>
@@ -93,6 +138,10 @@ export const DatePickerInline: React.SFC<DatePickerInlineProps> = props => {
 
 DatePickerInline.defaultProps = {
   views: ['year', 'day'],
+  clearable: false,
+  clearLabel: 'Clear',
+  todayLabel: 'Today',
+  showTodayButton: true,
 };
 
 export default React.forwardRef((props: DatePickerInlineProps, ref) => (
