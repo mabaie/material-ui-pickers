@@ -29,6 +29,8 @@ export interface InlineWrapperProps extends OuterInlineWrapperProps {
   onlyCalendar: boolean;
   clearable?: boolean;
   clearLabel?: React.ReactNode;
+  showTodayButton?: boolean;
+  todayLabel?: React.ReactNode;
 }
 
 export class InlineWrapper extends React.PureComponent<
