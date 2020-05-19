@@ -1,7 +1,7 @@
 {
-  "name": "material-ui-pickers",
-  "version": "2.0.0",
-  "description": "Material-ui pickers root package",
+  "name": "material-ui-pickers-m",
+  "version": "1.0.0",
+  "description": "Material-ui pickers-m root package",
   "main": "index.js",
   "directories": {
     "doc": "docs",
@@ -9,26 +9,25 @@
   },
   "private": true,
   "workspaces": [
-    "lib",
-    "docs"
+    "lib"
   ],
   "scripts": {
     "start": "yarn workspace docs dev",
-    "release": "yarn workspace material-ui-pickers release && yarn workspace docs deploy",
+    "release": "yarn workspace material-ui-pickers release",
     "e2e:open": "cypress open",
     "e2e:run": "cypress run"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dmtrKovalenko/material-ui-pickers.git"
+    "url": "git+https://github.com/mabaie/material-ui-pickers-m.git#v2.2.4-dev"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dmtrKovalenko/material-ui-pickers/issues"
+    "url": "https://github.com/mabaie/material-ui-pickers-m.git/issues"
   },
-  "homepage": "https://github.com/dmtrKovalenko/material-ui-pickers#readme",
+  "homepage": "https://github.com/mabaie/material-ui-pickers-m.git#readme",
   "devDependencies": {
     "husky": "^1.1.2",
     "lint-staged": "^7.3.0",

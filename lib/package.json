@@ -1,6 +1,6 @@
 {
-  "name": "material-ui-pickers",
-  "version": "2.2.2",
+  "name": "material-ui-pickers-m",
+  "version": "1.0.0",
   "private": true,
   "description": "React components, that implements material design pickers for material-ui v1",
   "main": "./src/index.ts",
@@ -21,12 +21,12 @@
   "sideEffects": false,
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dmtrKovalenko/material-ui-pickers/issues"
+    "url": "https://github.com/mabaie/material-ui-pickers-m.git/issues"
   },
   "homepage": "https://material-ui-pickers.dev/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dmtrKovalenko/material-ui-pickers"
+    "url": "https://github.com/mabaie/material-ui-pickers-m.git"
   },
   "author": {
     "name": "Dmitriy Kovalenko",
@@ -64,7 +64,7 @@
     "build:typescript": "tsc --project tsconfig.json",
     "build": "npm run build:typescript && npm run build:bundle && npm run build:copy",
     "build:analyze": "npm run build",
-    "release": "npm run test && npm run build && yarn publish build",
+    "release": "npm run test && npm run build && npm run publish",
     "lint": "tslint --project tsconfig.json"
   },
   "devDependencies": {
