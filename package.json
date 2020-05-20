@@ -9,11 +9,12 @@
   },
   "private": true,
   "workspaces": [
+    "docs",
     "lib"
   ],
   "scripts": {
     "start": "yarn workspace docs dev",
-    "release": "yarn workspace material-ui-pickers release",
+    "release": "yarn workspace material-ui-pickers-m release",
     "e2e:open": "cypress open",
     "e2e:run": "cypress run"
   },
